@@ -1,0 +1,17 @@
+.center-screen {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 5vh;
+  padding: 20px;
+  border: solid 3px #673AB7;
+  background-color: #b8a7d6;
+}
+
+.error-card {
+  background-color: #F44336;
+  font-weight: bold;
+}

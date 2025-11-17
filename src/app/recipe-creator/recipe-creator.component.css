@@ -1,0 +1,21 @@
+.full-width {
+  width: 100%;
+}
+
+.creator-base {
+  display: flex;
+  flex-direction: column;
+  margin: 1vh;
+}
+
+.ingredient {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.recipe-tab {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+}

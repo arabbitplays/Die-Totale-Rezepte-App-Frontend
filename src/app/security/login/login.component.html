@@ -1,0 +1,22 @@
+<div class="center-screen">
+  <mat-card class = "error-card" *ngIf="loginFailed">
+    <mat-card-content>Wrong username or password!</mat-card-content>
+  </mat-card>
+
+  <mat-form-field *ngIf="!this.authenticationService.isUserLoggedIn()">
+    <mat-label>Username</mat-label>
+    <input matInput [formControl]="usernameControl">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="!this.authenticationService.isUserLoggedIn()">
+    <mat-label>Password</mat-label>
+    <input type = "password" matInput [formControl]="passwordControl">
+  </mat-form-field>
+
+  <button mat-flat-button color="accent" *ngIf="!this.authenticationService.isUserLoggedIn()" (click)="handleLogin()">Sign In</button>
+
+  <button mat-flat-button color="accent" *ngIf="this.authenticationService.isUserLoggedIn()" (click)="handleLogout()">Log Out</button>
+
+</div>
+
+

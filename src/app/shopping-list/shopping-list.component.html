@@ -1,0 +1,26 @@
+<form>
+  <mat-form-field>
+    <mat-label>Search for Items</mat-label>
+    <input matInput (input)="filterResults(filter.value)" #filter>
+  </mat-form-field>
+</form>
+
+<mat-grid-list class="grid" cols="6" rowHeight="1:1">
+  <div *ngFor="let item of selectedItems">
+    <mat-grid-tile>
+      <button class = "grid-cell" [ngStyle]="{'background-color': '#F44336'}"
+              (click)="onDeselection(item)">{{item.getAsString()}}</button>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>
+
+<mat-divider></mat-divider>
+
+<mat-grid-list class="grid" cols="6" rowHeight="1:1">
+  <div *ngFor="let item of filteredItems">
+    <mat-grid-tile>
+      <button class = "grid-cell" [ngStyle]="{'background-color': '#673AB7'}"
+              (click)="onSelection(item)">{{item.getAsString()}}</button>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>

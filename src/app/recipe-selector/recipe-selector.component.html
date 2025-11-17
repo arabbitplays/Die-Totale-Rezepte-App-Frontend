@@ -1,0 +1,10 @@
+<form>
+  <mat-form-field>
+    <mat-label>Search for recipes</mat-label>
+    <input matInput (input)="filterResults(filter.value)" #filter>
+  </mat-form-field>
+</form>
+
+<div *ngFor="let recipeName of filteredRecipeNames">
+  <button class="configPointButton" mat-flat-button color="primary" [routerLink]="['/recipes', recipeName]">{{recipeName}}</button>
+</div>

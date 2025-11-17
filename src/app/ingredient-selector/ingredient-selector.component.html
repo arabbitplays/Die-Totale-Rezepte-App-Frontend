@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <mat-grid-list cols="6" rowHeight="1:1">
+    <div *ngFor="let item of freshItems">
+      <mat-grid-tile>
+        <div *ngIf="selectedMap.get(item)">
+          <button class="grid-cell" [ngStyle]="{'background-color': '#F44336'}" (click) = "removeItemFromList(item)">{{item.getAsString()}}</button>
+        </div>
+        <div *ngIf="!selectedMap.get(item)">
+          <button class="grid-cell" [ngStyle]="{'background-color': '#673AB7'}" (click) = "addItemToList(item)">{{item.getAsString()}}</button>
+        </div>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+
+  <mat-divider></mat-divider>
+
+  <mat-grid-list cols="6" rowHeight="1:1">
+    <div *ngFor="let item of notFreshItems">
+      <mat-grid-tile>
+        <div *ngIf="selectedMap.get(item)">
+          <button class="grid-cell" [ngStyle]="{'background-color': '#F44336'}" (click) = "removeItemFromList(item)">{{item.getAsString()}}</button>
+        </div>
+        <div *ngIf="!selectedMap.get(item)">
+          <button class="grid-cell" [ngStyle]="{'background-color': '#673AB7'}" (click) = "addItemToList(item)">{{item.getAsString()}}</button>
+        </div>
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+
+  <button mat-flat-button mat-dialog-close color="accent">Done</button>
+</div>
+
+
